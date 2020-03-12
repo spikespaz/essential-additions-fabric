@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "eamod:charcoal_block" }
+        "normal": { "model": "essential-additions:charcoal_block" }
     }
 }
