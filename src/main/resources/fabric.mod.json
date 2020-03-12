@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "essential-additions",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Essential Additions",
+  "description": "A mod that adds all of the cliche features that every player has suggested at some point.",
   "authors": [
-    "Me!"
+    "spikespaz"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://birkett.dev",
+    "sources": "https://github.com/spikespaz/essential-additions-fabric"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "Apache License Version 2.0",
+  "icon": "assets/essential-additions/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "net.spikespaz.essentialadditions.EssentialAdditions"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "esssentialadditions.mixins.json"
   ],
 
   "depends": {
