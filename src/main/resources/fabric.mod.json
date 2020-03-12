@@ -19,11 +19,11 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.spikespaz.essentialadditions.EssentialAdditions"
+      "com.spikespaz.essentialadditions.EssentialAdditions"
     ]
   },
   "mixins": [
-    "esssentialadditions.mixins.json"
+    "essential-additions.mixins.json"
   ],
 
   "depends": {
