@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "eamod:blocks/ruby_block"
+        "all": "essential-additions:blocks/ruby_block"
     }
 }

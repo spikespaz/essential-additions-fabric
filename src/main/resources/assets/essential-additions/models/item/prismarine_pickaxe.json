@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "eamod:items/prismarine_pickaxe"
+        "layer0": "essential-additions:items/prismarine_pickaxe"
     }
 }

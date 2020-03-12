@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "eamod:items/ruby_axe"
+        "layer0": "essential-additions:items/ruby_axe"
     }
 }

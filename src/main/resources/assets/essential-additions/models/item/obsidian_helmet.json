@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "eamod:items/obsidian_helmet"
+        "layer0": "essential-additions:items/obsidian_helmet"
     }
 }
