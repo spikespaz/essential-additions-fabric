@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "essential-additions:items/prismarine_axe"
+        "layer0": "essential-additions:item/prismarine_axe"
     }
 }

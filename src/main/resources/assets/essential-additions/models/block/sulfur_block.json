@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "essential-additions:blocks/sulfur_block"
+        "all": "essential-additions:block/sulfur_block"
     }
 }

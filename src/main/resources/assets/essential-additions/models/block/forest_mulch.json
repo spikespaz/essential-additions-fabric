@@ -1,7 +1,7 @@
 {   "parent": "block/thin_block",
     "textures": {
-        "all": "essential-additions:blocks/forest_mulch",
-        "particle": "essential-additions:blocks/forest_mulch"
+        "all": "essential-additions:block/forest_mulch",
+        "particle": "essential-additions:block/forest_mulch"
     },
     "elements": [
         {   "from": [ 0, 0, 0 ],

@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "essential-additions:blocks/charcoal_block"
+        "all": "essential-additions:block/charcoal_block"
     }
 }
