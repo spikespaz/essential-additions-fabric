@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "essential-additions:eye_ore" }
+        "": { "model": "essential-additions:block/eye_ore" }
     }
 }

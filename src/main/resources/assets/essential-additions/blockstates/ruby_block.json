@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "essential-additions:ruby_block" }
+        "": { "model": "essential-additions:block/ruby_block" }
     }
 }

@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "essential-additions:forest_mulch" }
+        "": { "model": "essential-additions:block/forest_mulch" }
     }
 }

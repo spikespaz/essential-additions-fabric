@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "essential-additions:sulfur_block" }
+        "": { "model": "essential-additions:block/sulfur_block" }
     }
 }
