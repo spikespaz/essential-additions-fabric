@@ -44,7 +44,7 @@
   "item.essential-additions.prismarine_hoe": "Prismarine Hoe",
 
   "item.essential-additions.obsidian_shard": "Obsidian Shard",
-  "item.essential-additions.sulfur": "Sulfur",
+  "item.essential-additions.sulfur": "Sulfur Dust",
   "item.essential-additions.charcoal_dust": "Charcoal Dust",
 
   "item.essential-additions.ruby": "Ruby",
@@ -52,13 +52,13 @@
   "item.essential-additions.gold_plating": "Gold Plating",
   "item.essential-additions.chain_link": "Chain Link",
 
-  "tile.essential-additions.sulfur_block": "Block of Sulfur",
+  "block.essential-additions.sulfur_block": "Block of Sulfur",
 
-  "tile.essential-additions.eye_ore": "Ender Ore",
+  "block.essential-additions.eye_ore": "Ender Ore",
 
-  "tile.essential-additions.ruby_ore": "Ruby Ore",
-  "tile.essential-additions.ruby_block": "Block of Ruby",
+  "block.essential-additions.ruby_ore": "Ruby Ore",
+  "block.essential-additions.ruby_block": "Block of Ruby",
 
-  "tile.essential-additions.charcoal_block": "Block of Charcoal",
-  "tile.essential-additions.forest_mulch": "Forest Mulch"
+  "block.essential-additions.charcoal_block": "Block of Charcoal",
+  "block.essential-additions.forest_mulch": "Forest Mulch"
 }
