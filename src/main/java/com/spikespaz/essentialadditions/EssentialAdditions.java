@@ -1,5 +1,7 @@
 package com.spikespaz.essentialadditions;
 
+import com.spikespaz.essentialadditions.blocks.ModBlocks;
+import com.spikespaz.essentialadditions.items.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 public class EssentialAdditions implements ModInitializer {

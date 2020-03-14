@@ -1,4 +1,4 @@
-package com.spikespaz.essentialadditions;
+package com.spikespaz.essentialadditions.blocks;
 
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.minecraft.block.Block;

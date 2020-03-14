@@ -1,5 +1,6 @@
-package com.spikespaz.essentialadditions;
+package com.spikespaz.essentialadditions.items;
 
+import com.spikespaz.essentialadditions.EssentialAdditions;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
