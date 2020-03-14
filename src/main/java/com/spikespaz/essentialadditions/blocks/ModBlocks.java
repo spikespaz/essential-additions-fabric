@@ -1,11 +1,14 @@
 package com.spikespaz.essentialadditions.blocks;
 
+import com.spikespaz.essentialadditions.EssentialAdditions;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
+import net.minecraft.block.MaterialColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -15,7 +18,7 @@ public final class ModBlocks {
     public static final Block RUBY_BLOCK = new Block(FabricBlockSettings.of(Material.STONE).build());
     public static final Block RUBY_ORE = new Block(FabricBlockSettings.of(Material.STONE).build());
     public static final Block CHARCOAL_BLOCK = new Block(FabricBlockSettings.of(Material.STONE).build());
-    public static final Block FOREST_MULCH = new Block(FabricBlockSettings.of(Material.LEAVES).build());
+    public static final Block FOREST_MULCH = new ForestMulch(FabricBlockSettings.of(Material.LEAVES, MaterialColor.BROWN).ticksRandomly().strength(0.1F, 0F).sounds(BlockSoundGroup.GRASS).breakByHand(true).breakInstantly().noCollision().build());
 
     public static void registerModBlocks() {
         Registry.register(Registry.BLOCK, new Identifier(EssentialAdditions.MODID, "sulfur_block"), SULFUR_BLOCK);
