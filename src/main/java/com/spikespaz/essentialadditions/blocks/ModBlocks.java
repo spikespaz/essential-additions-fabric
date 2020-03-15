@@ -12,6 +12,10 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Map;
+
 public final class ModBlocks {
     public static final Block SULFUR_BLOCK = new Block(FabricBlockSettings.of(Material.SAND).build());
     public static final Block EYE_ORE = new Block(FabricBlockSettings.of(Material.STONE).build());
@@ -20,21 +24,37 @@ public final class ModBlocks {
     public static final Block CHARCOAL_BLOCK = new Block(FabricBlockSettings.of(Material.STONE).build());
     public static final Block FOREST_MULCH = new ForestMulch(FabricBlockSettings.of(Material.LEAVES, MaterialColor.BROWN).ticksRandomly().strength(0.1F, 0F).sounds(BlockSoundGroup.GRASS).breakByHand(true).breakInstantly().noCollision().build());
 
-    public static void registerModBlocks() {
-        Registry.register(Registry.BLOCK, new Identifier(EssentialAdditions.MODID, "sulfur_block"), SULFUR_BLOCK);
-        Registry.register(Registry.BLOCK, new Identifier(EssentialAdditions.MODID, "eye_ore"), EYE_ORE);
-        Registry.register(Registry.BLOCK, new Identifier(EssentialAdditions.MODID, "ruby_block"), RUBY_BLOCK);
-        Registry.register(Registry.BLOCK, new Identifier(EssentialAdditions.MODID, "ruby_ore"), RUBY_ORE);
-        Registry.register(Registry.BLOCK, new Identifier(EssentialAdditions.MODID, "charcoal_block"), CHARCOAL_BLOCK);
-        Registry.register(Registry.BLOCK, new Identifier(EssentialAdditions.MODID, "forest_mulch"), FOREST_MULCH);
+    private static final HashMap<String, ItemGroup> CREATIVE_TAB_MAP = new HashMap<>();
+
+    static {
+        CREATIVE_TAB_MAP.put("sulfur_block", ItemGroup.BUILDING_BLOCKS);
+        CREATIVE_TAB_MAP.put("eye_ore", ItemGroup.BUILDING_BLOCKS);
+        CREATIVE_TAB_MAP.put("ruby_block", ItemGroup.BUILDING_BLOCKS);
+        CREATIVE_TAB_MAP.put("ruby_ore", ItemGroup.BUILDING_BLOCKS);
+        CREATIVE_TAB_MAP.put("charcoal_block", ItemGroup.BUILDING_BLOCKS);
+        CREATIVE_TAB_MAP.put("forest_mulch", ItemGroup.BUILDING_BLOCKS);
     }
 
-    public static void registerModBlockItems() {
-        Registry.register(Registry.ITEM, new Identifier(EssentialAdditions.MODID, "sulfur_block"), new BlockItem(SULFUR_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-        Registry.register(Registry.ITEM, new Identifier(EssentialAdditions.MODID, "eye_ore"), new BlockItem(EYE_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-        Registry.register(Registry.ITEM, new Identifier(EssentialAdditions.MODID, "ruby_block"), new BlockItem(RUBY_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-        Registry.register(Registry.ITEM, new Identifier(EssentialAdditions.MODID, "ruby_ore"), new BlockItem(RUBY_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-        Registry.register(Registry.ITEM, new Identifier(EssentialAdditions.MODID, "charcoal_block"), new BlockItem(CHARCOAL_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-        Registry.register(Registry.ITEM, new Identifier(EssentialAdditions.MODID, "forest_mulch"), new BlockItem(FOREST_MULCH, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+    public static void registerModBlocks() throws IllegalAccessException {
+        Field[] fields = ModBlocks.class.getDeclaredFields();
+
+        for (Field field : fields) {
+            Class type = field.getType();
+
+            if (type != Block.class)
+                continue;
+
+            Block block = (Block) field.get(null);
+
+            Registry.register(Registry.BLOCK, new Identifier(EssentialAdditions.MODID, field.getName().toLowerCase()), block);
+        }
+    }
+
+    public static void registerModBlockItems() throws NoSuchFieldException, IllegalAccessException {
+        for (Map.Entry<String, ItemGroup> entry : CREATIVE_TAB_MAP.entrySet()) {
+            Block block = (Block) ModBlocks.class.getDeclaredField(entry.getKey().toUpperCase()).get(null);
+
+            Registry.register(Registry.ITEM, new Identifier(EssentialAdditions.MODID, entry.getKey()), new BlockItem(block, new Item.Settings().group(entry.getValue())));
+        }
     }
 }

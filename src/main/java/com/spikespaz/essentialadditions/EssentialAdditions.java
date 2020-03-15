@@ -14,7 +14,15 @@ public class EssentialAdditions implements ModInitializer {
 		// Proceed with mild caution.
 
 		ModItems.registerModItems();
-		ModBlocks.registerModBlocks();
-		ModBlocks.registerModBlockItems();
+		try {
+			ModBlocks.registerModBlocks();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
+		try {
+			ModBlocks.registerModBlockItems();
+		} catch (NoSuchFieldException | IllegalAccessException e) {
+			e.printStackTrace();
+		}
 	}
 }
