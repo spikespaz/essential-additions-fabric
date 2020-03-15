@@ -1,7 +1,0 @@
-{
-    "parent": "block/cube_all",
-    "textures": {
-        "particle": "minecraft:block/end_stone",
-        "all": "essential-additions:block/eye_ore"
-    }
-}

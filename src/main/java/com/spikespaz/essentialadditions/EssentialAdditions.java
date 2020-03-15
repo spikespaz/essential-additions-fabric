@@ -5,7 +5,7 @@ import com.spikespaz.essentialadditions.items.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 public class EssentialAdditions implements ModInitializer {
-	public static final String MODID = "essential-additions";
+	public static final String MODID = "essentialadditions";
 
 	@Override
 	public void onInitialize() {
@@ -13,7 +13,11 @@ public class EssentialAdditions implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		ModItems.registerModItems();
+		try {
+			ModItems.registerModItems();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
 		try {
 			ModBlocks.registerModBlocks();
 		} catch (IllegalAccessException e) {
